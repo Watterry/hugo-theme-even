@@ -93,9 +93,13 @@
 {{- end }}
 
 <!-- Analytics -->
+{{/* 本文件过时，所以注释掉，以后真不需要了再删除
 {{- if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") | and .Site.GoogleAnalytics -}}
   {{ template "_internal/google_analytics_async.html" . }}
 {{- end -}}
+*/}}
+
+<!-- baidu analytics -->
 
 {{- with .Site.Params.baiduAnalytics -}}
 <script id="baidu_analytics">

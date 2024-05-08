@@ -19,3 +19,12 @@
   </div>
 </div>
 {{- end }}
+
+{{ if or .Params.BuyMeACoffee (and .Site.Params.BuyMeACoffee.enable (ne .Params.BuyMeACoffee false)) -}}
+<div class="post-reward">
+  <a href="https://buymeacoffee.com/{{ .Site.Params.BuyMeACoffee.Slug }}p" target="_blank" rel="noreferrer">
+    <img src="https://img.buymeacoffee.com/button-api/?text={{ .Site.Params.BuyMeACoffee.Text }}&emoji=&slug={{ .Site.Params.BuyMeACoffee.Slug }}&button_colour={{ .Site.Params.BuyMeACoffee.ButtonColor }}&font_colour={{ .Site.Params.BuyMeACoffee.FrontColor }}&font_family={{ .Site.Params.BuyMeACoffee.Font }}&outline_colour={{ .Site.Params.BuyMeACoffee.CupColor }}&coffee_colour={{ .Site.Params.BuyMeACoffee.CoffeeColor }}"
+    alt="buy me a coffee"/>    
+  </a>
+</div>
+{{- end }}
